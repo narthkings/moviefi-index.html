@@ -1,0 +1,69 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="movies.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+    <title>Movie Api</title>
+</head>
+<body>
+<div class="container">
+<h1>M<i class="fas fa-play-circle"></i>vieFy <i class="fas fa-film"></i> </h1>
+
+<input class="form-control form-control-lg " id="search" placeholder="Search for your movie title Here">
+
+<button type="button" id="btn" class="btn btn-primary">Search</button>
+
+    <section class="part2">
+        <div> Movie Title: <span id="mt"></span> </div>
+        <div>Release Year: <span id="my"></span> </div>
+        <div>Image:<span><img src="" class="img-fluid image" id="avatar" alt="Responsive image"></span></div>
+    </section>
+</div>
+<script>
+    let url=" http://www.omdbapi.com/?apikey=3082b2a7&s=";
+    let btn = document.querySelector("#btn");
+    let search = document.querySelector("#search");
+    let Mt = document.querySelector("#mt");
+    let My = document.querySelector("#my");
+    let avatar = document.querySelector("#avatar");
+
+    btn.addEventListener("click",()=>{
+        fetch(url+search.value)
+            .then(HandleError)
+            .then(parsingJson)
+            .then(request)
+            .catch(err=> console.log(err));
+    });
+    function HandleError(error) {
+        if (!error.ok){
+            throw Error("Bad gateway");
+        }else {
+            console.log(error.status);
+        }
+        return error;
+    }
+    function parsingJson(response) {
+        console.log(response);
+        return response.json()
+    }
+    function request(data) {
+        console.log(data);
+        let title =  data.Search[0].Title;
+        Mt.innerHTML =title;
+        let year =  data.Search[0].Year;
+        My.innerHTML =year;
+        let  img =  data.Search[0].Poster;
+        avatar.src=img;
+
+    }
+</script>
+</body>
+</html>
