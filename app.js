@@ -1,4 +1,3 @@
-// USE CONST TO DEFINE A VARIABLE THAT SHOULD REMAIN CONSTANT (BEST PRACTICE)
 
 /***
  * 
@@ -10,6 +9,12 @@
  *      INTRO TO AJAX
  * 
  */
+
+
+
+
+// USE CONST TO DEFINE A VARIABLE THAT WOUNDN'T CHANGE (BEST PRACTICE) like the url, btn, search etc
+// USE VARIABLE NAMES THAT ENTAILS THE PURPOSE IT SERVES
 
 let url=" https://www.omdbapi.com/?apikey=3082b2a7&s=";
 let btn = document.querySelector("#btn");
