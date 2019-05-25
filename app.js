@@ -1,3 +1,16 @@
+// USE CONST TO DEFINE A VARIABLE THAT SHOULD REMAIN CONSTANT (BEST PRACTICE)
+
+/***
+ * 
+ * Sign up with Udacity www.udacity.com  or https://auth.udacity.com/sign-up
+ * 
+ * Take these free course (from  catalog) on fundamental javascript and ajax request
+ *      INTRO TO JAVASCRIPT
+ *      JAVASCRIPT AND THE DOM
+ *      INTRO TO AJAX
+ * 
+ */
+
 let url=" https://www.omdbapi.com/?apikey=3082b2a7&s=";
 let btn = document.querySelector("#btn");
 let search = document.querySelector("#search");
