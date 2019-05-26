@@ -26,9 +26,24 @@ section{
     height: 100%;
 
 }
+
+
  .part2{
     font-weight: 300;
      font-size: 20px;
     color: #FFFFFF;
+}
+
+
+/* MY STYLING */
+
+#resultContainer {
+    text-align: center;
+}
+
+.result {
+    border: 2px solid black;
+    margin: 1em;
+    width: inherit;
 }
 

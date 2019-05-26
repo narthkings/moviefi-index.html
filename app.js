@@ -23,6 +23,8 @@ let Mt = document.querySelector("#mt");
 let My = document.querySelector("#my");
 let avatar = document.querySelector("#avatar");
 
+const resultContainer = document.querySelector('#resultContainer')
+
 btn.addEventListener("click",()=>{
     fetch(url+search.value)
         .then(HandleError)
@@ -42,13 +44,29 @@ function parsingJson(response) {
     console.log(response);
     return response.json()
 }
+// function request(data) {
+//     console.log(data);
+//     let title =  data.Search[0].Title;
+//     Mt.innerHTML =title;
+//     let year =  data.Search[0].Year;
+//     My.innerHTML =year;
+//     let  img =  data.Search[0].Poster;
+//     avatar.src=img;
+
+// }
+
 function request(data) {
-    console.log(data);
-    let title =  data.Search[0].Title;
-    Mt.innerHTML =title;
-    let year =  data.Search[0].Year;
-    My.innerHTML =year;
-    let  img =  data.Search[0].Poster;
-    avatar.src=img;
+    // holding the movies and the htmlContent to be displayed within variables
+    const movies = data.Search
+    // console.log(movies)
+    let htmlContent = movies.map(movie => `
+        <div class="result">
+            <h3>${movie.Title}</h3>
+            <p>${movie.Year}</p>
+            <img src="${movie.Poster}" alt="${movies.Title}">
+        </div>
+    `).join('')
+
+    resultContainer.insertAdjacentHTML('afterbegin', htmlContent);
 
 }
