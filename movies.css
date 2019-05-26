@@ -58,3 +58,7 @@ section{
     transition: all 1s;
 }
 
+.result p {
+    margin-top: -5px;
+}
+

@@ -7,14 +7,21 @@
  *      INTRO TO JAVASCRIPT
  *      JAVASCRIPT AND THE DOM
  *      INTRO TO AJAX
+ *      ES6 COURSE
  * 
  */
 
 
 
+/**
+ * USE CONST TO DEFINE A VARIABLE THAT WOUNDN'T CHANGE (BEST PRACTICE) like the url, btn, search etc
+ * USE VARIABLE NAMES THAT ENTAILS THE PURPOSE IT SERVES as it's below
+ * 
+ * USE COMMENTS TO INDICATE THE INTENT OF YOUR CODE FOR READIBLITY
+ */
 
-// USE CONST TO DEFINE A VARIABLE THAT WOUNDN'T CHANGE (BEST PRACTICE) like the url, btn, search etc
-// USE VARIABLE NAMES THAT ENTAILS THE PURPOSE IT SERVES
+const resultContainer = document.querySelector('#resultContainer')
+
 
 let url=" https://www.omdbapi.com/?apikey=3082b2a7&s=";
 let btn = document.querySelector("#btn");
@@ -23,7 +30,6 @@ let Mt = document.querySelector("#mt");
 let My = document.querySelector("#my");
 let avatar = document.querySelector("#avatar");
 
-const resultContainer = document.querySelector('#resultContainer')
 
 btn.addEventListener("click",()=>{
     fetch(url+search.value)
@@ -55,18 +61,41 @@ function parsingJson(response) {
 
 // }
 
+
+// requesting data
 function request(data) {
     // holding the movies and the htmlContent to be displayed within variables
     const movies = data.Search
-    // console.log(movies)
-    let htmlContent = movies.map(movie => `
+    let htmlContent = '';
+    /**
+     * 
+        'movies' is an array and arrays have a 'map' method which is used to manipulate arrays 
+        and then assign the results to another variable (in this case 'htmlContent')
+        
+        the 'join' on line 84 is also an array method that convert arrays to strings by joining them
+        based on the parameter provided. (in this case an empty string '') 
+
+    **/
+
+    htmlContent = movies.map(movie => `
         <div class="result">
             <h3>${movie.Title}</h3>
             <p>${movie.Year}</p>
-            <img src="${movie.Poster}" alt="${movies.Title}">
+            <img src="${movie.Poster}" alt="${movie.Title}">
         </div>
     `).join('')
 
-    resultContainer.insertAdjacentHTML('afterbegin', htmlContent);
+    /** 
+        checking for previous search results, removing them and replacing them with new search results
+        so the page isn't clustered with previous search results;
+    */
 
+    if(resultContainer.hasChildNodes()) {
+        resultContainer.innerHTML = ''
+        resultContainer.insertAdjacentHTML('afterbegin', htmlContent);
+    } else {
+        console.log(resultContainer.hasChildNodes())
+        resultContainer.insertAdjacentHTML('afterbegin', htmlContent);
+
+    }
 }
