@@ -37,10 +37,8 @@ section{
 
 /* MY STYLING */
 
-/* #resultContainer {
-    text-align: center;
-} */
 
+/* styling the result box */
 .result {
     display: flex;
     justify-content: center;
@@ -49,13 +47,14 @@ section{
     /* border: 2px solid black; */
     margin: 1em; 
     padding: 1em;
-    /* for the box */
-    box-shadow: inset 0 0 20px 0 rgba(190, 189, 192, 0.5);
+    /* for box shadow*/
+    box-shadow: 0 0 20px 0 #70b7eb;
 
 }
 
+/* hovering on result box */
 .result:hover {
-    box-shadow: inset 0 0 20px 0 rgba(245, 244, 244, 0.9);
+    box-shadow: 0 0 20px 0 snow;
     transition: all 1s;
 }
 
