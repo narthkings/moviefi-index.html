@@ -37,13 +37,25 @@ section{
 
 /* MY STYLING */
 
-#resultContainer {
+/* #resultContainer {
     text-align: center;
-}
+} */
 
 .result {
-    border: 2px solid black;
-    margin: 1em;
-    width: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* border: 2px solid black; */
+    margin: 1em; 
+    padding: 1em;
+    /* for the box */
+    box-shadow: inset 0 0 20px 0 rgba(190, 189, 192, 0.5);
+
+}
+
+.result:hover {
+    box-shadow: inset 0 0 20px 0 rgba(245, 244, 244, 0.9);
+    transition: all 1s;
 }
 
