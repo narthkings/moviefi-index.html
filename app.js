@@ -62,7 +62,7 @@ function parsingJson(response) {
 // }
 
 
-// requesting data
+// REQUESTING DATA
 function request(data) {
     // holding the movies and the htmlContent to be displayed within variables
     const movies = data.Search
@@ -99,3 +99,12 @@ function request(data) {
 
     }
 }
+
+
+
+/*
+    TODO
+
+    Style the result card, heading and paragraphs
+    add a back to top button that brings the user back to the top when clcked
+**/
