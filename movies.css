@@ -26,9 +26,40 @@ section{
     height: 100%;
 
 }
+
+
  .part2{
     font-weight: 300;
      font-size: 20px;
     color: #FFFFFF;
 }
+
+
+/* MY STYLING */
+
+
+/* styling the result box */
+.result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* border: 2px solid black; */
+    margin: 1em; 
+    padding: 1em;
+    /* for box shadow*/
+    box-shadow: 0 0 20px 0 #70b7eb;
+
+}
+
+/* hovering on result box */
+.result:hover {
+    box-shadow: 0 0 20px 0 snow;
+    transition: all 1s;
+}
+
+.result p {
+    margin-top: -5px;
+}
+
 

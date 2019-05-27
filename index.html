@@ -21,49 +21,22 @@
 
 <button type="button" id="btn" class="btn btn-primary">Search</button>
 
-    <section class="part2">
-        <div> Movie Title: <span id="mt"></span> </div>
-        <div>Release Year: <span id="my"></span> </div>
-        <div>Image:<span><img src="" class="img-fluid image" id="avatar" alt="Responsive image"></span></div>
-    </section>
+    <!-- <section class="part2">
+        <div id="mt"></div>
+        <div id="my"></div>
+        <div><img id="avatar"></div>
+    </section> -->
+
+    <!-- placing my results in another container so as not to distrupt your code -->
+    <div id="resultContainer"></div>
+
 </div>
-<script>
-    let url=" https://www.omdbapi.com/?apikey=3082b2a7&s=";
-    let btn = document.querySelector("#btn");
-    let search = document.querySelector("#search");
-    let Mt = document.querySelector("#mt");
-    let My = document.querySelector("#my");
-    let avatar = document.querySelector("#avatar");
 
-    btn.addEventListener("click",()=>{
-        fetch(url+search.value)
-            .then(HandleError)
-            .then(parsingJson)
-            .then(request)
-            .catch(err=> console.log(err));
-    });
-    function HandleError(error) {
-        if (!error.ok){
-            throw Error("Bad gateway");
-        }else {
-            console.log(error.status);
-        }
-        return error;
-    }
-    function parsingJson(response) {
-        console.log(response);
-        return response.json()
-    }
-    function request(data) {
-        console.log(data);
-        let title =  data.Search[0].Title;
-        Mt.innerHTML =title;
-        let year =  data.Search[0].Year;
-        My.innerHTML =year;
-        let  img =  data.Search[0].Poster;
-        avatar.src=img;
+<!-- moved the javascript code to a new file for easy use and readiblity. Plus, it's best practice! -->
+<script src="app.js"></script>
 
-    }
-</script>
 </body>
 </html>
+
+
+
