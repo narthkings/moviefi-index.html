@@ -77,7 +77,7 @@ function request(data) {
       `
     );
   } else {
-    htmlContent = `<div class="no-movie-error">Sorry... There is no movies on <em><strong>${search.value}</strong></em> :( Please Try again later</div>`
+    htmlContent = `<div class="no-movie-error">Sorry... There is no movies on <em><strong> ${search.value} </strong></em> :( Please Try again later</div>`
   }
 
   /** 
