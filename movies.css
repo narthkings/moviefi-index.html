@@ -80,3 +80,17 @@ section {
   bottom: 15px;
   right: 15px;
 }
+
+
+.no-movie-error {
+  font-size: 1.5em;
+  margin-top: 2em;
+  font-family: "Copperplate Gothic Bold", sans-serif;
+  color: rgb(31, 28, 28)
+};
+
+div span {
+  font-weight: bolder;
+  font-style: italic;
+  color: white;
+}
