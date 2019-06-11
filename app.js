@@ -29,7 +29,7 @@ let htmlContent = "";
 
 btn.addEventListener("click", () => {
   fetch(url + search.value)
-    .then(HandleError)
+    .then(handleError)
     .then(parsingJson)
     .then(request)
     .catch(err => console.log(err));
@@ -47,7 +47,7 @@ btn.addEventListener("click", () => {
  * 
  * 
  */
-function HandleError(error) {
+function handleError(error) {
   console.log(error);
   if (!error.ok) {
     throw Error("Bad gateway");
