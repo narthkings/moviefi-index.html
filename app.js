@@ -34,6 +34,19 @@ btn.addEventListener("click", () => {
     .then(request)
     .catch(err => console.log(err));
 });
+
+/****
+ * TODO
+ * 
+ * I have displayed error when there is no book results see line 61 - 75.
+ * Now display erorr message "Sorry, we couldn't fetch results now, please check internet connection and/or try again";
+ * 
+ * TIPS: 
+ * look into the HandleError function, check where the reponse status is not ok, display error messsage to the page.
+ * Reach out to me if you are stucked :)
+ * 
+ * 
+ */
 function HandleError(error) {
   console.log(error);
   if (!error.ok) {
@@ -50,8 +63,8 @@ function parsingJson(response) {
 // REQUESTING DATA
 function request(data) {
   const movies = data.Search;
-  // checking for search results
 
+  // checking for search results
   if (movies) {
     console.log(movies);
     htmlContent = movies.map(
@@ -64,20 +77,8 @@ function request(data) {
       `
     );
   } else {
-    htmlContent = `<div class="no-movie-error">Sorry... There is no movies on <span>${search.value}</span> :( Please Try again later</div>`
+    htmlContent = `<div class="no-movie-error">Sorry... There is no movies on <em><strong>${search.value}</strong></em> :( Please Try again later</div>`
   }
-
-  //   htmlContent = movies
-  //     .map(
-  //       movie => `
-  //         <div class="result">
-  //             <h3>${movie.Title}</h3>
-  //             <p>${movie.Year}</p>
-  //             <img src="${movie.Poster}" alt="${movie.Title}">
-  //         </div>
-  //     `
-  //     )
-  //     .join("");
 
   /** 
         checking for previous search results, removing them and replacing them with new search results
@@ -88,7 +89,6 @@ function request(data) {
     resultContainer.innerHTML = "";
     resultContainer.insertAdjacentHTML("afterbegin", htmlContent);
   } else {
-    console.log(resultContainer.hasChildNodes());
     resultContainer.insertAdjacentHTML("afterbegin", htmlContent);
   }
 }
