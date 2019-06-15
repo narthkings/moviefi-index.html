@@ -1,86 +1,94 @@
-
-body{
-    background-color: #1365a1;
-    margin: 20px;
+body {
+  background-color: #1365a1;
+  margin: 20px;
 }
-h1{
-    color: #fff;
-    font-family: "Copperplate Gothic Bold", sans-serif;
+h1 {
+  color: #fff;
+  font-family: "Copperplate Gothic Bold", sans-serif;
 }
-.container{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
-.btn{
-    margin: 20px;
-    font-family: "Copperplate Gothic Bold";
-    color: #052a09;
-}
-
-section{
-    background: #0c3b5a;
-    display: block;
-    width: auto;
-    height: 100%;
-
+.btn {
+  margin: 20px;
+  font-family: "Copperplate Gothic Bold";
+  color: #052a09;
 }
 
-
- .part2{
-    font-weight: 300;
-     font-size: 20px;
-    color: #FFFFFF;
+section {
+  background: #0c3b5a;
+  display: block;
+  width: auto;
+  height: 100%;
 }
 
+.part2 {
+  font-weight: 300;
+  font-size: 20px;
+  color: #ffffff;
+}
 
 /* MY STYLING */
 
-
 /* styling the result box */
 .result {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    /* border: 2px solid black; */
-    margin: 1em; 
-    padding: 1em;
-    /* for box shadow*/
-    box-shadow: 0 0 20px 0 #70b7eb;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* border: 2px solid black; */
+  margin: 1em;
+  padding: 1em;
+  /* for box shadow*/
+  box-shadow: 0 0 20px 0 #70b7eb;
 }
 
 /* hovering on result box */
 .result:hover {
-    box-shadow: 0 0 20px 0 snow;
-    transition: all 1s;
+  box-shadow: 0 0 20px 0 snow;
+  transition: all 1s;
 }
 
 .result p {
-    margin-top: -5px;
+  margin-top: -5px;
 }
 /*  scroll back to the top button */
 
 #myBtn {
   display: none;
   position: fixed;
-  bottom: 20px;
-  right: 30px;
+  bottom: 10px;
+  right: 10px;
   z-index: 99;
-  font-size: 18px;
+  font-size: 20px;
   border: none;
   outline: none;
-  background-color: #2798a3;
+  background-color: inherit;
   color: white;
   cursor: pointer;
   padding: 15px;
   border-radius: 4px;
+  transition: 0.5s;
 }
 
 #myBtn:hover {
-  background-color: #555;
+  transition: 0.5s;
+  font-size: 30px;
+  bottom: 15px;
+  right: 15px;
 }
+
+
+.no-movie-error {
+  text-align: center;
+  font-size: 1.5em;
+  margin-top: 2em;
+  font-family: "Copperplate Gothic Bold", sans-serif;
+  color: rgb(31, 28, 28)
+};
+
 
 

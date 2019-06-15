@@ -1,40 +1,55 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="movies.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="movies.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+      crossorigin="anonymous"
+    />
 
     <title>Movie Api</title>
-</head>
-<body>
-<!--    updating scroll button here  -->
-    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-    
-<div class="container">
-<h1>M<i class="fas fa-play-circle"></i>vieFy <i class="fas fa-film"></i> </h1>
+  </head>
+  <body>
+    <!--    updating scroll button here  -->
 
-<input class="form-control form-control-lg " id="search" placeholder="Search for your movie title Here">
+    <div class="container">
+      <h1>
+        M<i class="fas fa-play-circle"></i>vieFy <i class="fas fa-film"></i>
+      </h1>
 
-<button type="button" id="btn" class="btn btn-primary">Search</button>
+      <input
+        class="form-control form-control-lg "
+        id="search"
+        placeholder="Search for your movie title Here"
+      />
 
+      <button type="button" id="btn" class="btn btn-primary">Search</button>
 
-    <!-- placing my results in another container so as not to distrupt your code -->
-    <div id="resultContainer"></div>
+      <!-- placing my results in another container so as not to distrupt your code -->
+      <div id="resultContainer"></div>
 
-</div>
+      <button onclick="topFunction()" id="myBtn" title="Go to top">
+        <i class="fa fa-arrow-up" title="back to top"></i>
+      </button>
+    </div>
 
-<!-- moved the javascript code to a new file for easy use and readiblity. Plus, it's best practice! -->
-<script src="app.js"></script>
-
-</body>
+    <!-- moved the javascript code to a new file for easy use and readiblity. Plus, it's best practice! -->
+    <script src="app.js"></script>
+  </body>
 </html>
-
-
-
